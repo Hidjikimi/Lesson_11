@@ -1,0 +1,35 @@
+td {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+.tbl_div {
+    float: left;
+}
+
+.btn_div {
+    float: right;
+    width: 800px;
+}
+
+.range1 {
+    background: #ffffff;
+}
+
+.range2 {
+    background: #fcf6a9;
+}
+
+.range3 {
+    background: #fccf05;
+}
+
+.range4 {
+    background: #fc8505;
+}
+
+.range5 {
+    background: #f50202;
+}
