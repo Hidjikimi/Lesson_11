@@ -11,15 +11,18 @@
 ##   Connect to the container at DOCKER_IP:3000
 ##     replacing DOCKER_IP for the IP of your active docker host
 
-FROM gcr.io/stacksmith-images/debian-buildpack:wheezy-r10
+FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r4
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
-ENV STACKSMITH_STACK_ID="y1z2xlg" \
+ENV STACKSMITH_STACK_ID="hyd59bk" \
     STACKSMITH_STACK_NAME="Node.js for Hidjikimi/Lesson_11" \
     STACKSMITH_STACK_PRIVATE="1"
 
-RUN bitnami-pkg install node-7.0.0-0 --checksum 8049e447c9ac3cbf74b2ea7602e7126b6e5610b2f2c7b0e5f3ad18710eca4108
+# Install required system packages
+RUN install_packages libc6 libssl1.0.0 libncurses5 libtinfo5 zlib1g libbz2-1.0 libreadline6 libstdc++6 libgcc1 ghostscript imagemagick libmysqlclient18
+
+RUN bitnami-pkg install node-7.2.0-1 --checksum 5db6e968fc6613fc9c04b8933aff9b1699d23f4755b63570ff644420fe0960ff
 
 ENV PATH=/opt/bitnami/node/bin:/opt/bitnami/python/bin:$PATH \
     NODE_PATH=/opt/bitnami/node/lib/node_modules
